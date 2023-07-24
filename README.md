@@ -1,8 +1,8 @@
 <div align="right">
 
-  [![license](https://img.shields.io/github/license/block-foundation/manifesto?color=green&label=license&style=flat-square)](LICENSE.md)
-  ![stars](https://img.shields.io/github/stars/block-foundation/manifesto?color=blue&label=stars&style=flat-square)
-  ![contributors](https://img.shields.io/github/contributors/block-foundation/manifesto?color=blue&label=contributors&style=flat-square)
+  [![license](https://img.shields.io/github/license/block-foundation/solidity-smart-home?color=green&label=license&style=flat-square)](LICENSE.md)
+  ![stars](https://img.shields.io/github/stars/block-foundation/solidity-smart-home?color=blue&label=stars&style=flat-square)
+  ![contributors](https://img.shields.io/github/contributors/block-foundation/solidity-smart-home?color=blue&label=contributors&style=flat-square)
 
 </div>
 
@@ -10,7 +10,7 @@
 
 <div>
     <img align="right" src="https://raw.githubusercontent.com/block-foundation/brand/master/logo/logo_gray.png" width="96" alt="Block Foundation Logo">
-    <h1 align="left">Solidity Smart-Contract Template</h1>
+    <h1 align="left">Blockchain Enabled Smart Home</h1>
     <h3 align="left">Block Foundation Smart Contract Series [Solidity]</h3>
 </div>
 
@@ -39,6 +39,19 @@
 
 ## Introduction
 
+Welcome to the Blockchain Enabled Smart Home project, where we leverage the power of blockchain technology to bring automation, security, and efficiency to your home environment.
+
+In the era of the Internet of Things (IoT), where all devices are becoming smarter and interconnected, our homes are not left behind. The concept of smart homes has rapidly emerged, providing people with increased comfort, energy efficiency, and home security. However, the integration of blockchain in this domain is still relatively new and opens up a myriad of opportunities.
+
+Our project aims to harness the benefits of blockchain, specifically Ethereum and Algorand platforms, to enhance the functionality and efficiency of a smart home. We employ smart contracts to automate home functions such as temperature control, light intensity regulation, and security alert systems based on external data inputs. These data inputs are provided by oracle services, which fetch real-world data and bring them onto the blockchain.
+
+In our Ethereum-based implementation, we utilize the Solidity programming language to write smart contracts that interact with Chainlink oracles for fetching external data. These smart contracts are designed to react when certain thresholds, such as temperature or light intensity, are crossed, triggering corresponding actions like adjusting the temperature or light intensity, or sending a security alert.
+
+In the Algorand version, we use PyTeal, a Python language binding for Algorand's smart contract language, TEAL. Due to Algorand's UTXO-based model and the stateful nature of its smart contracts, we construct a simplified version of a state machine to track variables such as temperature.
+
+Although the idea of integrating blockchain technology into smart homes may seem complex, it brings forth numerous advantages, such as enhanced security, transparency, and automation. Through our project, we aim to provide a robust, decentralized, and secure smart home system that paves the way for the future of home automation.
+
+We look forward to taking you on this innovative journey of transforming homes into blockchain-enabled smart homes.
 
 ## Quick Start
 
