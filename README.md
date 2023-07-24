@@ -69,6 +69,15 @@ npm run compile
 
 ## Contract
 
+In a smart home scenario, we could imagine a smart contract that regulates and automates various functions like temperature control, light control, security etc. based on external data feeds provided by oracles. This is an oversimplified version to demonstrate the concept. In the real-world, access controls would be required for these functions to prevent anyone other than the contract owner or authorized parties from invoking these actions. Additionally, these external contract calls could fail and the smart contract should handle these failures gracefully. The oracles also need to be trusted and secure.
+
+This example utilizes **Chainlink's Oracle** solution to retrieve external data. The three functions `checkTemperature`, `checkLightIntensity` and `checkSecurityAlert` fetches the latest data from each respective oracle feed and checks if it crosses a certain threshold. If it does, it emits an event, which can be listened to and acted upon.
+
+For real world usage, you may want the smart contract to also have the ability to act on this information, such as by interacting with other smart contracts to automatically adjust the temperature, light intensity or alert the security company in case of a security alert.
+
+We use three external contracts as examples: `TemperatureControlContract`, `LightControlContract` and `SecurityAlertContract`. These contracts should include the `setTemperature`, `setLightIntensity` and `setAlertStatus` methods respectively, that we could call to change the house's state.
+
+*Note: Due to the complexity and security considerations in smart contract development, especially when oracles or any form of external data is involved, this contract should not be used as is. It's a rudimentary demonstration and actual deployment would require additional features like error handling, security precautions (like checking the source of the oracle data), efficiency optimizations, etc.*
 
 ## Development Resources
 
