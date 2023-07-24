@@ -1,7 +1,7 @@
 {
-  "name": "solidity-land-registry",
+  "name": "solidity-smart-home",
   "description": "Decentralized Land Registry",
-  "author": "Stichting Block Foundation",
+  "author": "Blockchain Enabled Smart Home",
   "version": "0.0.1",
   "license": "Apache-2.0",
   "keywords": [
@@ -9,13 +9,13 @@
     "blockchain",
     "architecture"
   ],
-  "homepage": "https://github.com/block-foundation/solidity-land-registry#readme",
+  "homepage": "https://github.com/block-foundation/solidity-smart-home#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/block-foundation/solidity-land-registry.git"
+    "url": "git+https://github.com/block-foundation/solidity-smart-home.git"
   },
   "bugs": {
-    "url": "https://github.com/block-foundation/solidity-land-registry/issues"
+    "url": "https://github.com/block-foundation/solidity-smart-home/issues"
   },
   "main": "index.ts",
   "scripts": {
