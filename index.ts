@@ -16,6 +16,6 @@
 // limitations under the License.
 
 
-import { LandRegistry } from './contracts/LandRegistry.sol';
+import { SmartHomeContract } from './contracts/SmartHome.sol';
 
-export { LandRegistry };
+export { SmartHomeContract };
