@@ -22,6 +22,7 @@ pragma solidity ^0.8.19;
 import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
 import "TemperatureControlContract" from TemperatureControl.sol;
 
+
 // ============================================================================
 // Contracts
 // ============================================================================
@@ -29,7 +30,8 @@ import "TemperatureControlContract" from TemperatureControl.sol;
 /**
  *  @title Temperature Control Contract
  *  @author Lars Bastiaan van Vianen
- *  @notice This contract allows setting the temperature value for a simulated smart home system.
+ *  @notice This contract allows setting the temperature value for a simulated
+ *  smart home system.
  *  @dev Alpha version
  *  @custom:experimental This is an experimental contract.
  */
@@ -52,7 +54,8 @@ contract TemperatureControlContract {
 /**
  *  @title LightControlContract
  *  @author Lars Bastiaan van Vianen
- *  @notice This contract allows setting the light intensity value for a simulated smart home system.
+ *  @notice This contract allows setting the light intensity value for a
+ *  simulated smart home system.
  */
 contract LightControlContract {
 
@@ -85,7 +88,8 @@ contract SecurityAlertContract {
 
     /**
      *  @notice Sets the security alert status of the smart home system
-     *  @param _status The alert status to set (true means alert, false means no alert)
+     *  @param _status The alert status to set (true means alert, false means
+     *  no alert)
      */
     function setAlertStatus(bool _status) public {
         status = _status;
@@ -96,8 +100,10 @@ contract SecurityAlertContract {
 /**
  *  @title SmartHomeContract
  *  @author Lars Bastiaan van Vianen
- *  @notice This contract allows management of various parameters of a simulated smart home system.
- *  @dev It uses the Chainlink Aggregator V3 Interface to fetch temperature, light intensity, and security alert data.
+ *  @notice This contract allows management of various parameters of a
+ *  simulated smart home system.
+ *  @dev It uses the Chainlink Aggregator V3 Interface to fetch temperature,
+ *  light intensity, and security alert data.
 */
 contract SmartHomeContract {
 
@@ -147,21 +153,24 @@ contract SmartHomeContract {
     AggregatorV3Interface internal securityAlertFeed;
 
 
-    // Contract references
+    // Contract References
     // ------------------------------------------------------------------------
 
     /**
-     *  @notice Reference to the contract that controls temperature of the smart home system
+     *  @notice Reference to the contract that controls temperature of the
+     *  smart home system
      */
     TemperatureControlContract public temperatureControl;
 
     /**
-     *  @notice Reference to the contract that controls light intensity of the smart home system
+     *  @notice Reference to the contract that controls light intensity of the
+     *  smart home system
      */
     LightControlContract public lightControl;
 
     /**
-     *  @notice Reference to the contract that controls security alert status of the smart home system
+     *  @notice Reference to the contract that controls security alert status
+     *  of the smart home system
      */
     SecurityAlertContract public securityAlertControl;
 
@@ -239,7 +248,9 @@ contract SmartHomeContract {
      *  @dev Can only be called by the contract owner
      *  @param _thresholdTemperature The new threshold temperature
      */
-    function setThresholdTemperature(uint _thresholdTemperature) public onlyOwner {
+    function setThresholdTemperature(
+        uint _thresholdTemperature
+    ) public onlyOwner {
         thresholdTemperature = _thresholdTemperature;
     }
 
@@ -248,7 +259,9 @@ contract SmartHomeContract {
      *  @dev Can only be called by the contract owner
      *  @param _thresholdLightIntensity The new threshold light intensity
      */
-    function setThresholdLightIntensity(uint _thresholdLightIntensity) public onlyOwner {
+    function setThresholdLightIntensity(
+        uint _thresholdLightIntensity
+    ) public onlyOwner {
         thresholdLightIntensity = _thresholdLightIntensity;
     }
 
@@ -257,7 +270,9 @@ contract SmartHomeContract {
      *  @dev Can only be called by the contract owner
      *  @param _thresholdSecurityAlert The new threshold security alert level
      */
-    function setThresholdSecurityAlert(uint _thresholdSecurityAlert) public onlyOwner {
+    function setThresholdSecurityAlert(
+        uint _thresholdSecurityAlert
+    ) public onlyOwner {
         thresholdSecurityAlert = _thresholdSecurityAlert;
     }
 
@@ -283,8 +298,10 @@ contract SmartHomeContract {
     }
 
     /**
-     *  @notice Checks the current light intensity from the data feed and adjusts the system light intensity if needed
-     *  @dev This emits a LightIntensityThresholdCrossed event if the light intensity exceeds the threshold
+     *  @notice Checks the current light intensity from the data feed and 
+     *  adjusts the system light intensity if needed
+     *  @dev This emits a LightIntensityThresholdCrossed event if the light
+     *  intensity exceeds the threshold
      */
     function checkLightIntensity() public {
         (
@@ -296,15 +313,20 @@ contract SmartHomeContract {
         ) = lightIntensityFeed.latestRoundData();
         
         uint lightIntensity = uint(answer);
+
         if(lightIntensity > thresholdLightIntensity) {
             emit LightIntensityThresholdCrossed(lightIntensity);
-            lightControl.setLightIntensity(thresholdLightIntensity); // reduce light intensity
+
+            // reduce light intensity
+            lightControl.setLightIntensity(thresholdLightIntensity);
         }
     }
 
     /**
-     *  @notice Checks the current security alert status from the data feed and adjusts the system security alert status if needed
-     *  @dev This emits a SecurityAlertThresholdCrossed event if the security alert status exceeds the threshold
+     *  @notice Checks the current security alert status from the data feed and
+     *  adjusts the system security alert status if needed
+     *  @dev This emits a SecurityAlertThresholdCrossed event if the security
+     *  alert status exceeds the threshold
      */
     function checkSecurityAlert() public {
         (
