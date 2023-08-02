@@ -19,83 +19,22 @@
 pragma solidity ^0.8.19;
 
 
+// ============================================================================
+// Contracts
+// ============================================================================
+
+// Remote
 import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
-import "TemperatureControlContract" from TemperatureControl.sol;
+
+// Local
+import "./LightControl.sol";
+import "./TemperatureControl.sol";
+import "./SecurityAlert.sol";
 
 
 // ============================================================================
 // Contracts
 // ============================================================================
-
-/**
- *  @title Temperature Control Contract
- *  @author Lars Bastiaan van Vianen
- *  @notice This contract allows setting the temperature value for a simulated
- *  smart home system.
- *  @dev Alpha version
- *  @custom:experimental This is an experimental contract.
- */
-contract TemperatureControlContract {
-
-    /**
-     *  @notice Represents the current temperature of the smart home system
-     */
-    uint public temperature;
-    
-    /**
-     *  @notice Sets the temperature of the smart home system
-     *  @param _temperature The temperature to set
-     */
-    function setTemperature(uint _temperature) public {
-        temperature = _temperature;
-    }
-}
-
-/**
- *  @title LightControlContract
- *  @author Lars Bastiaan van Vianen
- *  @notice This contract allows setting the light intensity value for a
- *  simulated smart home system.
- */
-contract LightControlContract {
-
-    /**
-     *  @notice Represents the current light intensity of the smart home system
-     */
-    uint public lightIntensity;
-    
-    /**
-     *  @notice Sets the light intensity of the smart home system
-     *  @param _lightIntensity The light intensity to set
-     */
-    function setLightIntensity(uint _lightIntensity) public {
-        lightIntensity = _lightIntensity;
-    }
-}
-
-
-/**
- *  @title SecurityAlertContract
- *  @author Lars Bastiaan van Vianen
- *  @notice This contract allows setting the alert status for a simulated smart home system.
- */
-contract SecurityAlertContract {
-
-    /**
-     *  @notice Represents the current security alert status of the smart home system
-     */
-    bool public status;
-
-    /**
-     *  @notice Sets the security alert status of the smart home system
-     *  @param _status The alert status to set (true means alert, false means
-     *  no alert)
-     */
-    function setAlertStatus(bool _status) public {
-        status = _status;
-    }
-}
-
 
 /**
  *  @title SmartHomeContract
@@ -180,7 +119,8 @@ contract SmartHomeContract {
 
     /**
      *  @notice Creates a new SmartHomeContract instance
-     *  @dev The contract uses the provided oracle feeds and control contract addresses
+     *  @dev The contract uses the provided oracle feeds and control contract 
+     *  addresses
      *  @param _temperatureFeed The address of the temperature data oracle
      *  @param _lightIntensityFeed The address of the light intensity data oracle
      *  @param _securityAlertFeed The address of the security alert data oracle
@@ -243,6 +183,9 @@ contract SmartHomeContract {
     // ========================================================================
 
 
+    // Setters
+    // ------------------------------------------------------------------------
+
     /**
      *  @notice Sets the threshold temperature for the smart home system
      *  @dev Can only be called by the contract owner
@@ -276,6 +219,8 @@ contract SmartHomeContract {
         thresholdSecurityAlert = _thresholdSecurityAlert;
     }
 
+    // Checkers
+    // ------------------------------------------------------------------------
 
     /**
      *  @notice Checks the current temperature from the data feed and adjusts the system temperature if needed
@@ -338,9 +283,12 @@ contract SmartHomeContract {
         ) = securityAlertFeed.latestRoundData();
         
         uint securityAlert = uint(answer);
+
         if(securityAlert > thresholdSecurityAlert) {
             emit SecurityAlertThresholdCrossed(securityAlert);
-            securityAlertControl.setAlertStatus(true); // trigger alert
+
+            // trigger alert
+            securityAlertControl.setAlertStatus(true);
         }
     }
 
