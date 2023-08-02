@@ -16,7 +16,7 @@
 // limitations under the License.
 
 
-pragma solidity ^0.8.6;
+pragma solidity ^0.8.7; 
 
 
 // ============================================================================
@@ -24,7 +24,9 @@ pragma solidity ^0.8.6;
 // ============================================================================
 
 // Remote
-import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
+import '@chainlink/contracts/src/v0.8/ChainlinkClient.sol'; 
+import '@chainlink/contracts/src/v0.8/ConfirmedOwner.sol'; 
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 // Local
 import "./LightControl.sol";
