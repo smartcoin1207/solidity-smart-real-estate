@@ -16,6 +16,8 @@
 // limitations under the License.
 
 
-import { SmartHomeContract } from './contracts/SmartHome.sol';
+// export {ethers} from 'ethers';
 
-export { SmartHomeContract };
+// import { SmartHomeContract } from './contracts/SmartHome.sol';
+
+// export { SmartHomeContract };
