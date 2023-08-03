@@ -2,12 +2,25 @@
     "name": "solidity-smart-home",
     "description": "Blockchain Enabled Smart Home",
     "author": "Lars Bastiaan van Vianen",
+    "maintainers": [
+        "Lars van Vianen"
+    ],
     "version": "0.0.1",
     "license": "Apache-2.0",
     "keywords": [
         "blockfoundation",
+        "block-foundation",
         "blockchain",
-        "architecture"
+        "architecture",
+        "real-estate",
+        "smart-contract",
+        "ethereum",
+        "solidity",
+        "chainlink",
+        "iot",
+        "internet-of-things",
+        "smart-home",
+        "housing"
     ],
     "homepage": "https://github.com/block-foundation/solidity-smart-home#readme",
     "repository": {
@@ -35,6 +48,7 @@
         "chai": "^4.3.7",
         "dotenv": "^16.3.1",
         "eslint": "^8.41.0",
+        "ethereum-waffle": "^4.0.10",
         "ethers": "^6.6.5",
         "hardhat": "^2.17.0",
         "prettier": "^2.8.8",
