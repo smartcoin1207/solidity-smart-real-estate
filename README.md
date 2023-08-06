@@ -1,8 +1,7 @@
 <div align="right">
 
-  [![license](https://img.shields.io/github/license/block-foundation/solidity-smart-home?color=green&label=license&style=flat-square)](LICENSE.md)
-  ![stars](https://img.shields.io/github/stars/block-foundation/solidity-smart-home?color=blue&label=stars&style=flat-square)
-  ![contributors](https://img.shields.io/github/contributors/block-foundation/solidity-smart-home?color=blue&label=contributors&style=flat-square)
+[![GitHub License](https://img.shields.io/github/license/block-foundation/blocktxt?style=flat-square&logo=readthedocs&logoColor=FFFFFF&label=&labelColor=%23041B26&color=%23041B26&link=LICENSE)](https://github.com/block-foundation/solidity-smart-home/blob/main/LICENSE)
+[![devContainer](https://img.shields.io/badge/Container-Remote?style=flat-square&logo=visualstudiocode&logoColor=%23FFFFFF&label=Remote&labelColor=%23041B26&color=%23041B26)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/block-foundation/solidity-smart-home)
 
 </div>
 
@@ -16,30 +15,30 @@
 
 ---
 
-<div>
-<img align="right" width="75%" src="https://raw.githubusercontent.com/block-foundation/brand/master/src/image/repository_cover/block_foundation-structure-03-accent.jpg"  alt="Block Foundation">
-<br>
-<details open="open">
-<summary>Table of Contents</summary>
-  
-- [Introduction](#style-guide)
-- [Quick Start](#quick-start)
-- [Contract](#contract)
-- [Development Resources](#development-resources)
-- [Legal Information](#legal-information)
-  - [Copyright](#copyright)
-  - [License](#license)
-  - [Warning](#warning)
-  - [Disclaimer](#disclaimer)
+<img align="right" width="75%" src="https://raw.githubusercontent.com/block-foundation/brand/master/src/image/repository_cover/block_foundation-structure-03-accent.jpg"  alt="Block Foundation Brand">
 
-</details>
-</div>
+### Contents
+
+- [Introduction](#introduction)
+- [Colophon](#colophon)
 
 <br clear="both"/>
 
-## Introduction
+---
 
-Welcome to the Blockchain Enabled Smart Home project, where we leverage the power of blockchain technology to bring automation, security, and efficiency to your home environment.
+<div align="right">
+
+[![Report a Bug](https://img.shields.io/badge/Report%20a%20Bug-GitHub?style=flat-square&&logoColor=%23FFFFFF&color=%23E1E4E5)](https://github.com/block-foundation/solidity-smart-home/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&projects=&template=bug_report.yml)
+[![Request a Feature](https://img.shields.io/badge/Request%20a%20Feature-GitHub?style=flat-square&&logoColor=%23FFFFFF&color=%23E1E4E5)](https://github.com/block-foundation/solidity-smart-home/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&projects=&template=feature_request.yml)
+[![Ask a Question](https://img.shields.io/badge/Ask%20a%20Question-GitHub?style=flat-square&&logoColor=%23FFFFFF&color=%23E1E4E5)](https://github.com/block-foundation/solidity-smart-home/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&projects=&template=question.yml)
+[![Make a Suggestion](https://img.shields.io/badge/Make%20a%20Suggestion-GitHub?style=flat-square&&logoColor=%23FFFFFF&color=%23E1E4E5)](https://github.com/block-foundation/solidity-smart-home/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&projects=&template=suggestion.yml)
+[![Start a Discussion](https://img.shields.io/badge/Start%20a%20Discussion-GitHub?style=flat-square&&logoColor=%23FFFFFF&color=%23E1E4E5)](https://github.com/block-foundation/solidity-smart-home/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&projects=&template=discussion.yml)
+
+</div>
+
+**Welcome to the Blockchain Enabled Smart Home project, where we leverage the power of blockchain technology to bring automation, security, and efficiency to your home environment.**
+
+## Introduction
 
 In the era of the Internet of Things (IoT), where all devices are becoming smarter and interconnected, our homes are not left behind. The concept of smart homes has rapidly emerged, providing people with increased comfort, energy efficiency, and home security. However, the integration of blockchain in this domain is still relatively new and opens up a myriad of opportunities.
 
@@ -50,8 +49,6 @@ In our Ethereum-based implementation, we utilize the Solidity programming langua
 In the Algorand version, we use PyTeal, a Python language binding for Algorand's smart contract language, TEAL. Due to Algorand's UTXO-based model and the stateful nature of its smart contracts, we construct a simplified version of a state machine to track variables such as temperature.
 
 Although the idea of integrating blockchain technology into smart homes may seem complex, it brings forth numerous advantages, such as enhanced security, transparency, and automation. Through our project, we aim to provide a robust, decentralized, and secure smart home system that paves the way for the future of home automation.
-
-We look forward to taking you on this innovative journey of transforming homes into blockchain-enabled smart homes.
 
 ## Quick Start
 
@@ -97,24 +94,40 @@ We use three external contracts as examples: `TemperatureControlContract`, `Ligh
 | **Self-Owning Building**          | [**>>>**](https://github.com/block-foundation/solidity-self-owning-building) | [**>>>**](https://github.com/block-foundation/teal-self-owning-building) |
 | **Smart Home**                    | [**>>>**](https://github.com/block-foundation/solidity-smart-home) | [**>>>**](https://github.com/block-foundation/teal-smart-home) |
 
-## Legal Information
 
-### Copyright
+---
 
-Copyright 2023, [Stichting Block Foundation](https://www.blockfoundation.io). All rights reserved.
+## Colophon
 
-### License
+### Authors
+
+This is an open-source project by the **[Block Foundation](https://www.blockfoundation.io "Block Foundation website")**.
+
+The Block Foundation mission is enabling architects to take back initiative and contribute in solving the mismatch in housing through blockchain technology. Therefore the Block Foundation seeks to unschackle the traditional constraints and construct middle ground between rent and the rigidity of traditional mortgages.
+
+website: [www.blockfoundation.io](https://www.blockfoundation.io "Block Foundation website")
+
+### Development Resources
+
+#### Contributing
+
+We'd love for you to contribute and to make this project even better than it is today!
+Please refer to the [contribution guidelines](.github/CONTRIBUTING.md) for information.
+
+### Legal Information
+
+#### Copyright
+
+Copyright &copy; 2023 [Stichting Block Foundation](https://www.blockfoundation.io/ "Block Foundation website"). All Rights Reserved.
+
+#### License
 
 Except as otherwise noted, the content in this repository is licensed under the
 [Creative Commons Attribution 4.0 International (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/), and
 code samples are licensed under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0).
 
-Also see [LICENSE](https://github.com/block-foundation/community/blob/master/LICENSE) and [LICENSE-CODE](https://github.com/block-foundation/community/blob/master/LICENSE-CODE).
+Also see [LICENSE](https://github.com/block-foundation/community/blob/master/src/LICENSE) and [LICENSE-CODE](https://github.com/block-foundation/community/blob/master/src/LICENSE-CODE).
 
-### Warning
-
-**Please note that this code should be audited by a professional smart-contract auditor before being used in a production environment as it is a simplified example and may not cover all potential security vulnerabilities.**
-
-### Disclaimer
+#### Disclaimer
 
 **THIS SOFTWARE IS PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
